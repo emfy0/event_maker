@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  app:
+    'name': 'Event maker'
+
+ru:
+  app:
+    'name': 'Event maker'
