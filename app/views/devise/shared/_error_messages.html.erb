@@ -2,6 +2,7 @@
   <div id="error_explanation">
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
       <ul>
+          <p>В форме <%= resource.errors.count %> <%= translate :errors, count: resource.errors.count%> </p>
         <% resource.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>

@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   private
 
   def set_name
-    self.name = "Пользователь #{rand(777)}"
+    self.name = "Пользователь #{rand(777)}" if self.name.blank?
   end
 end

@@ -1,5 +1,5 @@
 <%# Паршиал дляотображения формы создания нового события %>
-<%= form_for(@event) do |f| %>
+<%= form_for(@event, html: { data: { turbo: false }}) do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
   <div class="form-group">

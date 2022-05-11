@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Регистрация</h2>
 <div class="col-md-4">
 
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -23,7 +23,7 @@
     <b>
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> символов минимум)</em>
     <% end %>
     </b>
     <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', required: true %>
