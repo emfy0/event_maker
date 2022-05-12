@@ -1,3 +1,8 @@
 <h2><%= t 'event.editing' %></h2>
 
 <%= render 'form' %>
+
+<%= button_to t('event.delete'), event_path(@event),
+              method: :delete,
+              form: { data: { turbo_confirm: t('are_you_sure') } },
+              class: 'btn btn-danger mt-2' %>

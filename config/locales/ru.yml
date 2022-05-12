@@ -1,4 +1,6 @@
 ru:
+  are_you_sure: 'Вы уверены?'
+
   form:
     errors:
       one: 'В форме %{count} ошибка'
@@ -6,7 +8,7 @@ ru:
       many: 'В форме %{count} ошибок'
     save: 'Сохранить'
     back: 'Вернуться'
-  
+
   user:
     profile: 'Профиль'
     log_in: 'Войти'
@@ -19,6 +21,7 @@ ru:
     make: 'Создать событие'
     making: 'Создание события'
     editing: 'Редактирование события'
+    delete: 'Удалить событие'
 
   activerecord:
     models:
