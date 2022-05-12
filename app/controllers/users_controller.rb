@@ -1,11 +1,6 @@
-# (с) goodprogrammer.ru
-#
-# Контроллер, управляющий пользователями
 class UsersController < ApplicationController
-  # Встроенный в девайз фильтр — посылает незалогиненного пользователя
   before_action :authenticate_user!, except: [:show]
 
-  # Задаем объект @user для шаблонов и экшенов
   before_action :set_current_user, except: [:show]
 
   def show
