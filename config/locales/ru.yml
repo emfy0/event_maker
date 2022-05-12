@@ -9,6 +9,7 @@ ru:
     save: 'Сохранить'
     back: 'Вернуться'
     send: 'Отправить'
+    follow: 'Подписаться'
 
   user:
     profile: 'Профиль'
@@ -25,6 +26,11 @@ ru:
     making: 'Создание события'
     editing: 'Редактирование события'
     delete: 'Удалить событие'
+
+  subscription:
+    calls: 'Зовет:'
+    will_go: 'Пойдут:'
+    i_will: 'Я пойду:'
 
   activerecord:
     models:
@@ -45,6 +51,10 @@ ru:
       comment:
         body: 'Текст комментария'
         user_name: 'Ваше имя'
+      subscription:
+        user: 'Пользователь'
+        user_name: 'Ваше имя'
+        user_email: 'Ваша почта'
 
   controllers:
     events:
