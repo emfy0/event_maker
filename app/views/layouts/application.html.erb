@@ -13,17 +13,17 @@
   <body>
   <div class="navbar navbar-expand navbar-dark bg-dark mb-2">
     <div class="container-fluid container">
-      <%# Для вывода названия приложения используем хелпер I18n.t %>
+
       <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav ">
           <% if user_signed_in? %>
-            <li class="nav-item"><%= link_to 'Профиль', current_user, class: "btn btn-primary ms-2"%></li>
-            <li class="nav-item"><%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: "btn btn-primary ms-2"%></li>
+            <li class="nav-item"><%= link_to 'Профиль', current_user, class: "btn btn-outline-primary ms-2"%></li>
+            <li class="nav-item"><%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary ms-2"%></li>
           <% else %>
-            <li class="nav-item"><%= link_to 'Войти', new_user_session_path, class: "btn btn-primary ms-2" %></li>
-            <li class="nav-item"><%= link_to 'Регистрация', new_user_registration_path, class: "btn btn-primary ms-2" %></li>
+            <li class="nav-item"><%= link_to 'Войти', new_user_session_path, class: "btn btn-outline-primary ms-2" %></li>
+            <li class="nav-item"><%= link_to 'Регистрация', new_user_registration_path, class: "btn btn-outline-primary ms-2" %></li>
           <% end %>
         </ul>
       </div>
@@ -52,9 +52,10 @@
       </div>
     </div>
 
-    <footer>
-      <%# Для вывода названия компании используем хелпер I18n.t %>
-      <p>&copy; <%= t 'app.company' %> 2022</p>
+    <footer class="fixed-bottom">
+    <div class="container border-top">
+      <p class="text-center text-muted mt-2">&copy; <%= t 'app.company' %> 2022</p>
+    </div>
     </footer>
   </div>
   </body>
