@@ -1,16 +1,30 @@
 ru:
-  errors:
-    one: 'ошибка'
-    few: 'ошибки'
-    many: 'ошибок'
-  # Перевод моделей
+  form:
+    errors:
+      one: 'В форме %{count} ошибка'
+      few: 'В форме %{count} ошибки'
+      many: 'В форме %{count} ошибок'
+    save: 'Сохранить'
+    back: 'Вернуться'
+  
+  user:
+    profile: 'Профиль'
+    log_in: 'Войти'
+    log_out: 'Выйти'
+    register: 'Регистрация'
+    editing: 'Редактирование профиля'
+
+  event:
+    many: 'События'
+    make: 'Создать событие'
+    making: 'Создание события'
+    editing: 'Редактирование события'
+
   activerecord:
-    # Перевод названия моделей
     models:
       user: 'Пользователь'
       event: 'Событие'
 
-    # Перевод названий аттрибутов моделей
     attributes:
       user:
         email: 'Email'
@@ -23,7 +37,6 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
 
-  # Перевод сообщений, которые отправляет контроллер
   controllers:
     events:
       created: 'Вы создали новое мероприятие'
@@ -32,7 +45,6 @@ ru:
     users:
       updated: 'Вы обновили свой профиль'
 
-  # Перевод названия приложения и компании-разработчика
   app:
     name: 'Event maker'
     company: 'Ruby'

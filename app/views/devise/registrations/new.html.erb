@@ -1,4 +1,4 @@
-<h2>Регистрация</h2>
+<h2><%= t "devise.registrations.new.sign_up" %></h2>
 <div class="col-md-4">
 
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -23,7 +23,7 @@
     <b>
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> символов минимум)</em>
+    <em><%= t 'devise.shared.minimum_password_length', count: @minimum_password_length %></em>
     <% end %>
     </b>
     <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', required: true %>
@@ -37,7 +37,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Зарегистрироваться", class: 'btn btn-primary mt-2 mb-1' %>
+    <%= f.submit(t("devise.registrations.new.sign_up"), class: 'btn btn-primary mt-2 mb-1') %>
   </div>
   <% end %>
   <%= render "devise/shared/links" %>
