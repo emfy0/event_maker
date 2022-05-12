@@ -1,0 +1,19 @@
+<%= form_for [@event, subscription], html: { data: { turbo: false } } do |f| %>
+    <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
+
+    <% unless user_signed_in? %>
+        <div class="form-group">
+          <b><%= f.label :user_name %></b>
+          <%= f.text_field :user_name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <b><%= f.label :user_email %></b>
+          <%= f.text_field :user_email, class: 'form-control' %>
+        </div>
+    <% end %>
+
+    <div class="actions mt-2">
+      <%= f.submit t('form.follow'), class: 'btn btn-primary' %>
+    </div>
+<% end %>
