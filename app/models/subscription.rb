@@ -10,7 +10,9 @@ class Subscription < ApplicationRecord
 
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
   validate :owner_cant_be_subscriber
+
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
+  validate :unauthorized_users_cant_use_registred_mails, unless: -> { user.present? }
 
   def user_name
     if user.present?
@@ -29,6 +31,10 @@ class Subscription < ApplicationRecord
   end
 
   def owner_cant_be_subscriber
-    errors.add(:user, I18n.t('controllers.subscriptions.error')) if user == event.user
+    errors.add(:user) if user == event.user
+  end
+
+  def unauthorized_users_cant_use_registred_mails
+    errors.add(:user_email, I18n.t('errors.has_been_registered')) unless User.find_by(email: user_email).nil?
   end
 end
