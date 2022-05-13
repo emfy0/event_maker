@@ -76,3 +76,4 @@ ru:
   app:
     name: 'Event maker'
     company: 'Ruby'
+    github: 'GitHub'
