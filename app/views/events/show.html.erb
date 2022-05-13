@@ -45,6 +45,9 @@
     <div class="event-subscriptions">
       <h4><%= t 'subscription.will_go' %></h4>
       <div>
+        <% if @event.subscriptions.except(@new_subscription).empty? %>
+          <p class="text-center text-muted"><%= t 'subscription.no_subscribers' %></p>
+        <% end %>
         <p>
           <%= render partial: 'subscriptions/subscription',
         collection: @event.subscriptions.except(@new_subscription) %>

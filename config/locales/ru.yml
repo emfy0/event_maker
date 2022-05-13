@@ -32,6 +32,7 @@ ru:
     calls: 'Зовет:'
     will_go: 'Пойдут:'
     i_will: 'Я пойду:'
+    no_subscribers: 'Пока никто не подписался'
 
   activerecord:
     models:
