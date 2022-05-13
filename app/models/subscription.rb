@@ -9,7 +9,7 @@ class Subscription < ApplicationRecord
             unless: -> { user.present? }
 
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
-
+  validate :owner_cant_be_subscriber
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
   def user_name
@@ -26,5 +26,9 @@ class Subscription < ApplicationRecord
     else
       super
     end
+  end
+
+  def owner_cant_be_subscriber
+    errors.add(:user, I18n.t('controllers.subscriptions.error')) if user == event.user
   end
 end
