@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
     user_signed_in? && (
         model.user == current_user ||
         model.try(:event).try(:user) == current_user
-    )
+      )
   end
 end
