@@ -42,19 +42,7 @@
     </div>
 
     <div class="container">
-      <% if flash[:notice].present? %>
-        <div class="alert alert-dark alert-dismissible fade show" role="alert">
-          <%= flash[:notice] %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-          </button>
-        </div>
-      <% elsif flash[:alert].present? %>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <%= flash[:alert] %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-          </button>
-        </div>
-      <% end %>
+      <%= bootstrap_flash(flash) %>
       <div class="row">
         <div class="col-lg-12">
           <%= yield %>
