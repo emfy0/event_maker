@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   end
 
   validates :name, presence: true, length: { maximum: 35 }
-
   validates :avatar, content_type: %i[img png jpg jpeg]
 
   before_validation :set_name, on: :create

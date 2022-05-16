@@ -39,8 +39,11 @@ ru:
 
   activerecord:
     models:
-      user: 'Пользователь'
-      event: 'Событие'
+     user: 'Пользователь'
+     event: 'Событие'
+     subscription: 'Подписка'
+     comment: 'Комментарий'
+     photo: 'Фотография'
 
     attributes:
       user:
@@ -61,6 +64,8 @@ ru:
         user: 'Пользователь'
         user_name: 'Ваше имя'
         user_email: 'Ваша почта'
+      photo:
+        photo: 'Фотография'
 
   controllers:
     events:
@@ -77,6 +82,10 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
 
   app:
     name: 'Event maker'

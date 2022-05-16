@@ -1,0 +1,13 @@
+<%# Паршал для вывода отдельной фотографии %>
+<div class="event-photo buffer-both">
+  <%= image_tag(photo.photo.variant(:thumb)) %>
+  <%= button_to(
+            bi_icon('trash'),
+            event_photo_path(photo.event, photo),
+            method: :delete,
+            class: 'btn btn-link p-0',
+            form_class: 'd-inline'
+        ) %>
+  <%= bi_icon('caret-right-fill')%>
+  <%= render partial: 'users/user', object: photo.user %>
+</div>
