@@ -30,13 +30,19 @@
 <div class="row">
   <div class="col-md-8">
     <div class="event-photos">
+    <h2><%= t('photos.photos') %></h2>
       <div class="event-photos-gallery">
+        <% unless @event.photos.except.present? %>
+          <p class="text-muted text-center"><%= t('photos.no_photos') %></p>
+        <% end %>
         <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
       </div>
 
-      <div class="event-photo-form">
-        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="event-photo-form">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        </div>
+      <% end %>
     </div>
 
     <div class="event-comments buffer-top">

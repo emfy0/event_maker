@@ -4,6 +4,10 @@ ru:
   errors:
     has_been_registered: 'уже занята'
 
+  photos:
+    photos: 'Фотографии события'
+    no_photos: 'Фотографий пока нет'
+
   form:
     errors:
       one: 'В форме %{count} ошибка'

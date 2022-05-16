@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :photos, dependent: :destroy
 
   has_one_attached :avatar do |attachable|
-    attachable.variant :thumb, resize_to_limit: [50, 50]
+    attachable.variant :thumb, resize_to_fill: [50, 50]
   end
 
   validates :name, presence: true, length: { maximum: 35 }
