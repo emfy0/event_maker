@@ -1,13 +1,10 @@
 <div class="text-center">
-  <h1><%= @user.name %></h1>
-
-  <span class="user-avatar">
-  <% if @user.avatar.attached? %>
-    <%= image_tag(@user.avatar.variant(:thumb), class: 'img-icon') %>
-  <% else %>
-    <%= image_tag(user_avatar(@user), class: 'img-icon') %>
-  <% end %>
-  </span>
+  <h1>
+    <span class="user-avatar">
+     <%= image_tag(user_avatar(@user), class: 'img-icon') %>
+    </span>
+    <%= @user.name %>
+  </h1>
 
   <% if @user == current_user %>
     <p class="buffer-top">

@@ -7,7 +7,7 @@
             method: :delete,
             class: 'btn btn-link p-0',
             form_class: 'd-inline'
-        ) if current_user_can_edit?(photo.event) %>
+        ) if current_user_can_edit?(photo) %>
   <%= bi_icon('caret-right-fill')%>
   <%= render partial: 'users/user', object: photo.user %>
 </div>

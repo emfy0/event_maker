@@ -1,6 +1,20 @@
 module ApplicationHelper
   def user_avatar(user)
-    asset_path('user.png')
+    if user.avatar.attached?
+      user.avatar.variant(:thumb)
+    else
+      asset_path('user.png')
+    end
+  end
+
+  def event_photo(event)
+    photos = event.photos.persisted
+
+    if photos.any?
+      photos.sample.photo.variant(:thumb).url
+    else
+      asset_path('event.jpg')
+    end
   end
 
   def bi_icon(icon_class)
