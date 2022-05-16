@@ -5,10 +5,13 @@ ruby '3.0.2'
 
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 
+gem 'active_storage_validations'
+gem 'aws-sdk-s3'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
+gem 'image_processing', '>= 1.2'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'

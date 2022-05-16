@@ -2,7 +2,11 @@
   <h1><%= @user.name %></h1>
 
   <span class="user-avatar">
+  <% if @user.avatar.attached? %>
+    <%= image_tag(@user.avatar.variant(:thumb), class: 'img-icon') %>
+  <% else %>
     <%= image_tag(user_avatar(@user), class: 'img-icon') %>
+  <% end %>
   </span>
 
   <% if @user == current_user %>
