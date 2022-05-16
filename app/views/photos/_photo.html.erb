@@ -1,6 +1,6 @@
 <%# Паршал для вывода отдельной фотографии %>
 <div class="event-photo buffer-both">
-  <%= image_tag(photo.photo.variant(:thumb)) %>
+  <%= image_tag(photo.photo.variant(:thumb), class: 'img-fluid mb-2') %>
   <%= button_to(
             bi_icon('trash'),
             event_photo_path(photo.event, photo),
