@@ -1,2 +1,8 @@
 libglib2.0-0
 libglib2.0-dev
+libjpeg
+libpng
+libtiff
+giflib
+libwebp
+libpoppler
