@@ -35,18 +35,18 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :yandex
-  config.action_mailer.delivery_method = :mailjet
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   enable_starttls_auto: true,
-  #   address: 'smtp.yandex.ru',
-  #   port: 587,
-  #   authentication: 'plain',
-  #   user_name: Rails.application.credentials.dig(:yandex_mail, :user_name),
-  #   password: Rails.application.credentials.dig(:yandex_mail, :password)
-  # }
 
-  # config.action_mailer.default_options = { from: Rails.application.credentials.dig(:yandex_mail, :user_name) }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    enable_starttls_auto: true,
+    address: 'smtp.yandex.ru',
+    port: 587,
+    authentication: 'plain',
+    user_name: Rails.application.credentials.dig(:yandex_mail, :user_name),
+    password: Rails.application.credentials.dig(:yandex_mail, :password)
+  }
+
+  config.action_mailer.default_options = { from: Rails.application.credentials.dig(:yandex_mail, :user_name) }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
