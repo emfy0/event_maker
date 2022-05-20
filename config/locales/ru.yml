@@ -41,6 +41,10 @@ ru:
     i_will: 'Я пойду:'
     no_subscribers: 'Пока никто не подписался'
 
+  mail:
+    new_subscription: 'Новая подписка на %{event}'
+    new_comment: ''Новая комментарий @ %{event}''
+
   activerecord:
     models:
      user: 'Пользователь'
@@ -49,27 +53,27 @@ ru:
      comment: 'Комментарий'
      photo: 'Фотография'
 
-    attributes:
-      user:
-        email: 'Email'
-        name: 'Имя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
-        avatar: 'Фото профиля'
-      event:
-        title: 'Название'
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
-      comment:
-        body: 'Текст комментария'
-        user_name: 'Ваше имя'
-      subscription:
-        user: 'Пользователь'
-        user_name: 'Ваше имя'
-        user_email: 'Ваша почта'
-      photo:
-        photo: 'Фотография'
+  attributes:
+    user:
+      email: 'Email'
+      name: 'Имя'
+      password: 'Пароль'
+      password_confirmation: 'Подтверждение пароля'
+      avatar: 'Фото профиля'
+    event:
+      title: 'Название'
+      address: 'Место проведения'
+      datetime: 'Дата и время'
+      description: 'Описание'
+    comment:
+      body: 'Текст комментария'
+      user_name: 'Ваше имя'
+    subscription:
+      user: 'Пользователь'
+      user_name: 'Ваше имя'
+      user_email: 'Ваша почта'
+    photo:
+      photo: 'Фотография'
 
   controllers:
     events:
@@ -95,3 +99,19 @@ ru:
     name: 'Event maker'
     company: 'Ruby'
     github: 'GitHub'
+
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
