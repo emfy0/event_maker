@@ -44,6 +44,7 @@ ru:
   mail:
     new_subscription: 'Новая подписка на %{event}'
     new_comment: 'Новая комментарий @%{event}'
+    new_photo: 'Новая фотография @%{event}'
 
   activerecord:
     models:
@@ -111,6 +112,12 @@ ru:
       title: 'Новая подписка'
       name: 'Имя'
       email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    photo:
+      title: 'Новая фотография'
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
