@@ -4,7 +4,7 @@ class EventMailer < ApplicationMailer
     @name = subscription.user_name
     @event = subscription.event
 
-    mail to: event.user.email
+    mail to: @event.user.email
   end
 
   def comment(comment, email)
