@@ -29,8 +29,14 @@
 
 <div class="row">
   <div class="col-md-8">
+    <div>
+      <div id="map"
+        data-address="<%= @event.address %>"
+        style="width: 100%; height: 200px">
+      </div>
+    </div>
     <div class="event-photos">
-    <h2><%= t('photos.photos') %></h2>
+      <h2><%= t('photos.photos') %></h2>
       <div class="event-photos-gallery">
         <% unless @event.photos.except.present? %>
           <p class="text-muted text-center"><%= t('photos.no_photos') %></p>
