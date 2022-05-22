@@ -8,8 +8,8 @@
 <%= t '.event' %>
 <h3><%= link_to @event.title, event_url(@event) %></h3>>
 
-<%= t '.datetime' %>
-<h4><%= l @event.datetime, format: :short%></h4>
+<%= time_phrase(@event.datetime) %>
+<h4><%= l @event.datetime, format: :short %></h4>
 
 <%= t '.owner' %>
 <h4><%= @event.user.name %></h4>

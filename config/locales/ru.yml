@@ -34,6 +34,8 @@ ru:
     making: 'Создание события'
     editing: 'Редактирование события'
     delete: 'Удалить событие'
+    will_take_place: 'Планируется на'
+    was_in: 'Состоялось'
 
   subscription:
     calls: 'Зовет:'
@@ -109,7 +111,6 @@ ru:
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
       owner: 'Организатор'
     subscription:
       subject: 'Новая подписка'
@@ -118,7 +119,6 @@ ru:
       email: 'Email'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Планируется на'
       owner: 'Организатор'
     photo:
       subject: 'Новая фотография'

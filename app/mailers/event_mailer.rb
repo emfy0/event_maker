@@ -1,4 +1,6 @@
 class EventMailer < ApplicationMailer
+  helper EventMailerHelper
+
   def subscription(subscription)
     @email = subscription.user_email
     @name = subscription.user_name
@@ -13,7 +15,7 @@ class EventMailer < ApplicationMailer
 
     mail to: email
   end
-  
+
   def photo(photo, email)
     @photo = photo
     @event = photo.event
