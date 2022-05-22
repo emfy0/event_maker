@@ -1,15 +1,11 @@
 <%# Паршал для вывода отдельной фотографии %>
-<div class="event-photo buffer-both">
-  <a href="<%= photo.photo.url %>" data-lightbox="set">
-    <%= image_tag(photo.photo.variant(:thumb), class: 'img-fluid mb-2') %>
-  </a>
-  <%= button_to(
+  <a href="<%= photo.photo.url %>" data-lightbox="set"
+      data-title='<%= render partial: 'users/user', object: photo.user %>
+        <%= button_to(
             bi_icon('trash'),
             event_photo_path(photo.event, photo),
             method: :delete,
             class: 'btn btn-link p-0',
             form_class: 'd-inline'
-        ) if current_user_can_edit?(photo) %>
-  <%= bi_icon('caret-right-fill')%>
-  <%= render partial: 'users/user', object: photo.user %>
-</div>
+        ) if current_user_can_edit?(photo) %>' >
+    <%= image_tag(photo.photo.variant(resize_to_fit: [200, 200]).processed, class: 'img-fluid mb-2') %></a>
