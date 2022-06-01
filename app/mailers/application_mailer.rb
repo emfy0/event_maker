@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Rails.application.credentials.dig(:mailjet, :from)
+  default from: 'no-reply@eventmaker.emfy0.xyz'
   layout "mailer"
 end
