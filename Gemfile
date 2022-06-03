@@ -29,4 +29,10 @@ end
 group :development do
   gem "letter_opener"
   gem 'web-console'
+
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
 end
