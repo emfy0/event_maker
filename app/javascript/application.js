@@ -6,5 +6,3 @@ import * as bootstrap from "bootstrap"
 
 import "jquery"
 import "lightbox2"
-
-// import "./calendar"
