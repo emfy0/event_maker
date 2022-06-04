@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :password_guard!, only: [:show]
 
-  after_action :verify_authorized, except: %i[index new create]
+  after_action :verify_authorized, except: %i[index]
 
   def index
     @events = Event.all
@@ -26,6 +26,7 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
+    authorize @event
 
     if @event.save
       redirect_to @event, notice: I18n.t('controllers.events.created')

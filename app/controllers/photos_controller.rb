@@ -20,9 +20,9 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    message = { notice: I18n.t('controllers.photos.destroyed') }
-
     authorize @photo
+    
+    message = { notice: I18n.t('controllers.photos.destroyed') }
 
     @photo.destroy
 
