@@ -1,6 +1,9 @@
 ru:
   are_you_sure: 'Вы уверены?'
 
+  pundit:
+    not_authorized: 'Вам запрещено это действие!'
+
   errors:
     has_been_registered: 'уже занята'
 

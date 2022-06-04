@@ -2,7 +2,10 @@ class SubscriptionsController < ApplicationController
   before_action :set_event, only: %i[create destroy]
   before_action :set_subscription, only: [:destroy]
 
+  after_action :verify_authorized, only: [:destroy]
+
   def create
+    authorize @subscription
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
@@ -15,13 +18,11 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
+    authorize @subscription
+
     message = { notice: I18n.t('controllers.subscriptions.destroyed') }
 
-    if current_user_can_edit?(@subscription)
-      @subscription.destroy
-    else
-      message = { alert: I18n.t('controllers.subscriptions.error') }
-    end
+    @subscription.destroy
 
     redirect_to @event, message
   end

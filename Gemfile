@@ -17,6 +17,7 @@ gem 'jsbundling-rails'
 gem 'mailjet'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'pundit', '~> 2.2'
 gem 'rails-i18n', '~> 7.0.0'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
@@ -26,14 +27,18 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :test do
+  gem 'rspec-rails'
+end
+
 group :development do
-  gem "letter_opener"
+  gem 'letter_opener'
   gem 'web-console'
 
   gem 'capistrano'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-passenger'
   gem 'capistrano-nvm'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
