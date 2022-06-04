@@ -1,4 +1,4 @@
-<meta name="turbolinks-visit-control" content="reload">
+<%= javascript_include_tag "map" %>
 <div class="event">
   <div class="event-info row">
     <div class="col-md-12">
@@ -18,7 +18,7 @@
           <div class="mb-2">
             <% if current_user_can_edit?(@event) %>
               <%= link_to t('event.editing'), edit_event_path(@event),
-                class: 'btn btn-primary' %>
+                class: 'btn btn-primary', data: { turbo: false } %>
             <% end %>
           </div>
 
