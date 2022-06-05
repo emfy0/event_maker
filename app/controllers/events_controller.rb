@@ -16,8 +16,8 @@ class EventsController < ApplicationController
   end
 
   def new
-    authorize @event
     @event = current_user.events.build
+    authorize @event
   end
 
   def edit
