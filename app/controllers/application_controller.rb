@@ -1,6 +1,18 @@
+class EventContext
+  attr_reader :user, :event, :cookies, :params
+
+  def initialize(user, event, cookies, params)
+    @user = user
+    @event = event
+    @cookies = cookies
+    @params = params
+  end
+end
+
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
   include Pundit::Authorization
+
+  protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -19,6 +31,10 @@ class ApplicationController < ActionController::Base
   def current_user_can_edit?(model)
     user_signed_in? &&
       (model.user == current_user || model.try(:event).try(:user) == current_user)
+  end
+
+  def pundit_event(user, event, cookies, params)
+    EventContext.new(user, event, cookies, params)
   end
 
   private

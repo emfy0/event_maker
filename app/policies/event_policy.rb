@@ -19,10 +19,6 @@ class EventPolicy < ApplicationPolicy
     update?
   end
 
-  def show?
-    true
-  end
-
   private
 
   def user_is_owner?(event)
