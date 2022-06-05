@@ -15,6 +15,9 @@ document.addEventListener('turbo:load', () => {
 
 
   calendar.addEventListener('change', () => {
+    if (!calendar.value.match(/^\d{1,2}\.\d{1,2}\.\d{4} \d{1,2}:\d{1,2}$/))
+      return 0
+
     const [dateComponents, timeComponents] = calendar.value.split(' ');
 
     const [day, month, year] = dateComponents.split('.');
