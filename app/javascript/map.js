@@ -3,9 +3,8 @@ document.addEventListener('turbo:load', () => {
   var myMap;
 
   function init() {
-    if (document.getElementById('map') == null) {
-      return 0;
-    }
+    if (document.getElementById('map') == null)
+      return 0
 
     address = document.getElementById('map').getAttribute('data-address');
 
