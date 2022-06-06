@@ -5,7 +5,7 @@ set :application, "eventmaker"
 set :repo_url, "git@github.com:emfy0/event_maker.git"
 set :branch, :main
 
-set :deploy_to, "/home/deploy/www"
+set :deploy_to, "/home/kali/www"
 
 set :nvm_node, 'v16.15.1'
 set :nvm_type, :user
