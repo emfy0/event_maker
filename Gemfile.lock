@@ -333,7 +333,7 @@ DEPENDENCIES
   rspec-rails
   sprockets-rails
   stimulus-rails
-  strscan (>= 3.0.2)
+  strscan (>= 3.0.0)
   turbo-rails
   web-console
 
