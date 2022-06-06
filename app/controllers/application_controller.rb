@@ -1,11 +1,9 @@
 class EventContext
-  attr_reader :user, :event, :cookies, :params
+  attr_reader :event, :pincode
 
-  def initialize(user, event, cookies, params)
-    @user = user
+  def initialize(event:, pincode: nil)
     @event = event
-    @cookies = cookies
-    @params = params
+    @pincode = pincode
   end
 end
 
@@ -31,10 +29,6 @@ class ApplicationController < ActionController::Base
   def current_user_can_edit?(model)
     user_signed_in? &&
       (model.user == current_user || model.try(:event).try(:user) == current_user)
-  end
-
-  def pundit_event(user, event, cookies, params)
-    EventContext.new(user, event, cookies, params)
   end
 
   private

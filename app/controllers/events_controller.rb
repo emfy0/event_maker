@@ -4,16 +4,22 @@ class EventsController < ApplicationController
 
   after_action :verify_authorized, except: %i[index]
 
-  rescue_from EventContextPolicy::InvalidPincode, with: :require_pincode
-
   def index
     @events = Event.all
   end
 
   def show
-    authorize pundit_event(current_user, @event, cookies, params)
+    pincode = params[:pincode] || cookies.permanent["events_#{@event.id}_pincode"]
+
+    event_context = EventContext.new(event: @event, pincode: pincode)
+    authorize event_context, policy_class: EventPolicy
+
+    cookies.permanent["events_#{@event.id}_pincode"] = pincode
+
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
+  rescue Pundit::NotAuthorizedError
+    render_require_pincode_form
   end
 
   def new
@@ -53,7 +59,7 @@ class EventsController < ApplicationController
 
   private
 
-  def require_pincode
+  def render_require_pincode_form
     flash.now[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
     render 'password_form'
   end
