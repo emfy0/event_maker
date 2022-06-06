@@ -25,6 +25,8 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
+gem 'strscan', '>= 3.0.2'
+
 group :development, :test do
   gem 'pry-rails'
 end
