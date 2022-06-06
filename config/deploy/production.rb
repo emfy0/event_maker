@@ -1,1 +1,1 @@
-server '62.113.103.13', user: 'kali', roles: %w[app db web]
+server '192.168.1.59', user: 'kali', roles: %w[app db web]
