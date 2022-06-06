@@ -7,8 +7,4 @@ set :branch, :main
 
 set :deploy_to, "/home/kali/www"
 
-set :nvm_node, 'v16.15.1'
-set :nvm_type, :user
-set :nvm_map_bins, %w[node npm yarn]
-
 append :linked_files, "config/database.yml", 'config/master.key'
