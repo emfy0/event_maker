@@ -7,6 +7,8 @@ set :branch, :main
 
 set :deploy_to, "/home/kali/www"
 
+set :bundle_check_before_install, false
+
 set :rvm_type, :user
 set :rvm_ruby_version, '3.0.2'
 
