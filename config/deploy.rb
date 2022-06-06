@@ -7,7 +7,7 @@ set :branch, :main
 
 set :deploy_to, "/home/deploy/www"
 
-set :nvm_node, 'v16.15.0'
+set :nvm_node, 'v16.15.1'
 set :nvm_type, :user
 set :nvm_map_bins, %w[node npm yarn]
 
