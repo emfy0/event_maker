@@ -3,8 +3,8 @@ import AirDatepicker from 'air-datepicker'
 document.addEventListener('turbo:load', () => {
   const calendar = document.getElementById('datepicker')
 
-  if (calendar == null)
-    return 0
+  if (!calendar)
+    return
 
   datetime = calendar.value || new Date
 
