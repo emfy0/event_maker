@@ -1,6 +1,6 @@
 class SubscriptionPolicy < ApplicationPolicy
   def create?
-    user.present?
+    true
   end
 
   def destroy?
