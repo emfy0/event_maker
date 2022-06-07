@@ -7,12 +7,10 @@ gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 
 gem 'active_storage_validations'
 gem 'aws-sdk-s3'
-gem 'bcrypt_pbkdf'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
-gem 'ed25519'
 gem 'image_processing', '>= 1.2'
 gem 'jbuilder'
 gem 'jsbundling-rails'
@@ -24,8 +22,6 @@ gem 'rails-i18n', '~> 7.0.0'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-
-gem 'strscan', '>= 3.0.0'
 
 group :development, :test do
   gem 'pry-rails'
