@@ -5,8 +5,8 @@ class SubscriptionsController < ApplicationController
   after_action :verify_authorized, only: [:destroy]
 
   def create
-    authorize @subscription
     @new_subscription = @event.subscriptions.build(subscription_params)
+    authorize @new_subscription
     @new_subscription.user = current_user
 
     if @new_subscription.save

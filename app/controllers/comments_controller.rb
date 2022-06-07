@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
   after_action :verify_authorized, only: [:destroy]
 
   def create
-    authorize @comment
     @new_comment = @event.comments.build(comment_params)
+    authorize @new_commen
     @new_comment.user = current_user
 
     if @new_comment.save

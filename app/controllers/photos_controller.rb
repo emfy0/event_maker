@@ -6,8 +6,8 @@ class PhotosController < ApplicationController
   after_action :verify_authorized, only: [:destroy]
 
   def create
-    authorize @photo
     @new_photo = @event.photos.build(photo_params)
+    authorize @new_photo
 
     @new_photo.user = current_user
 
