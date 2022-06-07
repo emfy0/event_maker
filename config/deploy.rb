@@ -11,4 +11,6 @@ set :nvm_node, 'v16.15.1'
 set :nvm_type, :user
 set :nvm_map_bins, %w[node npm yarn]
 
+after 'deploy:restart', 'resque:restart'
+
 append :linked_files, 'config/database.yml', 'config/master.key'

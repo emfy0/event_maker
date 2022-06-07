@@ -19,6 +19,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.2'
 gem 'rails-i18n', '~> 7.0.0'
+gem 'resque'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
@@ -40,5 +41,6 @@ group :development do
   gem 'capistrano-nvm'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
+  gem 'capistrano-resque', require: false
   gem 'capistrano-rvm'
 end
