@@ -4,7 +4,10 @@ class NotifySubscribersJob < ApplicationJob
   def perform(event, record)
     all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [record.user&.email]).uniq
 
-    all_emails.each { |mail| EventMailer.photo(record, mail).deliver_now } if record.instance_of?(Photo)
-    all_emails.each { |mail| EventMailer.comment(record, mail).deliver_now } if record.instance_of?(Comment)
+    if record.instance_of?(Photo)
+      all_emails.each { |mail| EventMailer.photo(record, mail).deliver_now }
+    elsif record.instance_of?(Comment)
+      all_emails.each { |mail| EventMailer.comment(record, mail).deliver_now }
+    end
   end
 end
