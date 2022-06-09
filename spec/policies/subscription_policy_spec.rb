@@ -10,7 +10,7 @@ RSpec.describe SubscriptionPolicy do
     let(:subscription) { Subscription.new(event: event) }
 
     permissions :create? do
-      it { is_expected.not_to permit(nil, Subscription) }
+      it { is_expected.to permit(nil, Subscription) }
     end
 
     permissions :destroy? do
