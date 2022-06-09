@@ -16,6 +16,11 @@ Devise.setup do |config|
 
   config.omniauth :vkontakte, omniauth_vk_id, omniauth_vk_secret, { scope: 'email' }
 
+  omniauth_ya_id = Rails.application.credentials[Rails.env.to_sym][:omniauth_ya_id]
+  omniauth_ya_secret = Rails.application.credentials[Rails.env.to_sym][:omniauth_ya_secret]
+
+  config.omniauth :yandex, omniauth_ya_id, omniauth_ya_secret
+
   config.case_insensitive_keys = [:email]
 
   config.strip_whitespace_keys = [:email]

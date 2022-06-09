@@ -1,6 +1,9 @@
 ru:
   are_you_sure: 'Вы уверены?'
 
+  omniauth:
+    failure: 'Авторизоваться не удалось!'
+
   pundit:
     not_authorized: 'Вам запрещено это действие!'
 

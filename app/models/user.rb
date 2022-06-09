@@ -17,28 +17,39 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[vkontakte]
+         :omniauthable, omniauth_providers: %i[vkontakte yandex]
+
+  class << self
+    def find_for_vk_oauth(access_token)
+      standart_find_for_oauth(access_token)
+    end
+
+    def find_for_yandex_oauth(access_token)
+      standart_find_for_oauth(access_token)
+    end
+
+    private
+
+    def standart_find_for_oauth(access_token)
+      email = access_token.info.email
+
+      user = where(email: email).first
+      return user if user.present?
+
+      provider = access_token.provider
+      provider_id = access_token.extra.raw_info.id
+      name = access_token.info.name
+
+      where(provider_id: provider_id, provider: provider).first_or_create! do |user|
+        user.name = name
+        user.email = email
+        user.password = Devise.friendly_token.first(16)
+      end
+    end
+  end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
-  end
-
-  def self.find_for_vkontakte_oauth(access_token)
-    email = access_token.info.email
-
-    user = where(email: email).first
-    return user if user.present?
-
-    provider = access_token.provider
-    id = access_token.extra.raw_info.id
-    url = "http://vk.com/id#{id}"
-    name = access_token.info.name
-
-    where(url: url, provider: provider).first_or_create! do |user|
-      user.name = name
-      user.email = email
-      user.password = Devise.friendly_token.first(16)
-    end
   end
 
   private
