@@ -1,6 +1,7 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  config.hosts.clear
   config.cache_classes = false
   config.active_job.queue_adapter = :resque
   config.eager_load = false

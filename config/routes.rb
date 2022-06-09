@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
   root 'events#index'
 
   resources :events do
@@ -9,5 +12,6 @@ Rails.application.routes.draw do
 
     post :show, on: :member
   end
+
   resources :users, only: %i[show edit update]
 end

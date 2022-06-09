@@ -16,10 +16,29 @@ class User < ActiveRecord::Base
   after_commit :link_subscriptions, on: :create
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[vkontakte]
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def self.find_for_vkontakte_oauth(access_token)
+    email = access_token.info.email
+
+    user = where(email: email).first
+    return user if user.present?
+
+    provider = access_token.provider
+    id = access_token.extra.raw_info.id
+    url = "http://vk.com/id#{id}"
+    name = access_token.info.name
+
+    where(url: url, provider: provider).first_or_create! do |user|
+      user.name = name
+      user.email = email
+      user.password = Devise.friendly_token.first(16)
+    end
   end
 
   private

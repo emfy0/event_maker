@@ -27,9 +27,10 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to t( 'devise.shared.links.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)),
+    <%= button_to t( 'devise.shared.links.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)),
                 omniauth_authorize_path(resource_name, provider),
                 method: :post,
-                class: 'btn btn-outline-secondary my-1'  %><br />
+                data: { turbo: false },
+                class: 'btn btn-outline-secondary my-1' %><br />
   <% end %>
 <% end %>

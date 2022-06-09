@@ -38,3 +38,5 @@
 /config/database.yml
 
 dump.rdb
+
+s_token.provider
