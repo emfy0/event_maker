@@ -19,6 +19,7 @@ Frontend:
 
 ## Launching
 1. Clone repo
+1. Install `libvips`
 1. Use bundler
 1. Setup your API keys:
 >__credentials.yml.enc__
@@ -49,7 +50,7 @@ Frontend:
 >  omniauth_ya_id: 
 >  omniauth_ya_secret: 
 >```
-4. Setup your psql
+5. Setup your psql
 1. Change `database.yml`
 1. Create a new database and run mmigrations
 1. Run workers `QUEUE=eventmaker* bundle exec rake environment resque:work`
