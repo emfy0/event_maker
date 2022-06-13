@@ -49,7 +49,7 @@ Frontend:
 >  omniauth_ya_id: 
 >  omniauth_ya_secret: 
 >```
-1. Setup your psql
+4. Setup your psql
 1. Change `database.yml`
 1. Create a new database and run mmigrations
 1. Run workers `QUEUE=eventmaker* bundle exec rake environment resque:work`
