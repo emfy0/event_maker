@@ -52,9 +52,9 @@ Frontend:
 >```
 5. Setup your psql
 1. Change `database.yml`
-1. Create a new database and run mmigrations
+1. Create a new database and run migrations
 1. Run workers `QUEUE=eventmaker* bundle exec rake environment resque:work`
 1. Run application
 1. Enjoy
 
-Also you can sploy it via capistrano (configure it for your vps before).
+Also you can deploy it via capistrano (configure it for your vps before).
